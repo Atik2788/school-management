@@ -11,3 +11,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 - [Next.js](https://nextjs.org/learn)
+
+
+## installed 
+### for chart
+npm i recharts
+
+### for remove any installation
+npm remove rechart
