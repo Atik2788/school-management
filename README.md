@@ -7,15 +7,14 @@ npm run dev
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
-- [Next.js](https://nextjs.org/learn)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see 
 
 
 ## installed 
-### for chart
+### for chart 
 npm i recharts
+### for calendar
+npm i react-calendar 
 
 ### for remove any installation
 npm remove rechart
