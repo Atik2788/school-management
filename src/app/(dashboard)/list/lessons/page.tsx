@@ -22,7 +22,7 @@ const columns = [
     {
         header: "Class",
         accessor: 'class',
-        className: "hidden md:table-cell",
+        // className: "hidden md:table-cell",
     },
     {
         header: "Teacher",
@@ -40,7 +40,7 @@ const lessonsListPage = () => {
     const renderRow = (item: Lessons) => (
         <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50 text:sm hover:bg-lamaPurpleLight'>
             <td className='font-semibold'>{item.subject}</td>
-            <td className='hidden md:table-cell'>{item.class}</td>
+            <td className=''>{item.class}</td>
             <td className='hidden md:table-cell'>{item.teacher}</td>
             <td>
                 <div className='flex items-center gap-2'>
