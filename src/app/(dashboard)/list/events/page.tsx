@@ -1,50 +1,43 @@
 import Pagination from '@/components/Pagination';
 import Table from '@/components/Table';
 import TableSearch from '@/components/TableSearch';
-import { resultsData, role } from '@/lib/data';
+import { eventsData, role } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-type Result = {
+type Event = {
     id: number;
-    subject: string;
-    student: string;
-    score: number;
-    teacher: string;
+    title: string;
     class: string;
     date: string;
+    startTime: string;
+    endTime: string;
 }
 
 const columns = [
     {
-        header: "Subject",
-        accessor: 'subject',
-    },
-    {
-        header: "Student",
-        accessor: 'student',
-        // className: "hidden md:table-cell",
-    },
-    {
-        header: "Score",
-        accessor: 'score',
-        // className: "hidden md:table-cell",
-    },
-    {
-        header: "Teacher",
-        accessor: 'teacher',
-        className: "hidden md:table-cell",
+        header: "Title",
+        accessor: 'title',
     },
     {
         header: "Class",
         accessor: 'class',
-        className: "hidden md:table-cell",
+        // className: "hidden md:table-cell",
     },
-
     {
         header: "Date",
         accessor: 'date',
+        // className: "hidden md:table-cell",
+    },
+    {
+        header: "Start Time",
+        accessor: 'startTime',
+        className: "hidden md:table-cell",
+    },
+    {
+        header: "End Time",
+        accessor: 'endTime',
         className: "hidden md:table-cell",
     },
     {
@@ -53,16 +46,15 @@ const columns = [
     },
 ]
 
-const assignmentListPage = () => {
+const eventtListPage = () => {
 
-    const renderRow = (item: Result) => (
+    const renderRow = (item: Event) => (
         <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50 text:sm hover:bg-lamaPurpleLight'>
-            <td className='font-semibold'>{item.subject}</td>
-            <td className=''>{item.student}</td>
-            <td className=''>{item.score}</td>
-            <td className='hidden md:table-cell'>{item.teacher}</td>
-            <td className='hidden md:table-cell'>{item.class}</td>
-            <td className='hidden md:table-cell'>{item.date}</td>
+            <td className='font-semibold'>{item.title}</td>
+            <td className=''>{item.class}</td>
+            <td className=''>{item.date}</td>
+            <td className='hidden md:table-cell'>{item.startTime}</td>
+            <td className='hidden md:table-cell'>{item.endTime}</td>
             <td>
                 <div className='flex items-center gap-2'>
                     <Link href={`/list/teachers/${item.id}`}>
@@ -109,7 +101,7 @@ const assignmentListPage = () => {
             </div>
 
             {/* LIST */}
-            <Table columns={columns} renderRow={renderRow} data={resultsData} />
+            <Table columns={columns} renderRow={renderRow} data={eventsData} />
 
             {/* PAGINATION */}
             <Pagination />
@@ -118,4 +110,4 @@ const assignmentListPage = () => {
     );
 };
 
-export default assignmentListPage;
+export default eventtListPage;
