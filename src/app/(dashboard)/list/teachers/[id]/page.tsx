@@ -1,5 +1,8 @@
+import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
+import Performance from "@/components/Performance";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const SingleTeacherPage = () => {
@@ -85,8 +88,19 @@ const SingleTeacherPage = () => {
             </div>
 
             {/* RIGHT */}
-            <div className="w-full xl:w-1/3">
-                Right
+            <div className="w-full xl:w-1/3 flex flex-col gap-4">
+                <div className="bg-wite p-4 rounded-md"> 
+                    <h1 className="text-xl font-semibold">Sortcuts</h1>
+                    <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+                        <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">Teacher's Classes</Link>
+                        <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">Teacher's Students</Link>
+                        <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">Teacher's Lessons</Link>
+                        <Link className="p-3 rounded-md bg-pink-50" href="/">Teacher's Exams</Link>
+                        <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">Teacher's Assignments</Link>
+                    </div>
+                </div>
+                <Performance/>
+                <Announcements/>
             </div>
         </div>
     );
