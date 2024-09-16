@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-const FormModal = ({ table, type, data, id }: {
-    table: 
+import Image from "next/image";
+
+const FormModal = ({
+  table,
+  type,
+  data,
+  id,
+}: {
+  table:
     | "teacher"
     | "student"
     | "parent"
@@ -14,15 +21,27 @@ const FormModal = ({ table, type, data, id }: {
     | "attendance"
     | "event"
     | "announcement";
-    type: "create" | "update" | "delete";
-    data?:any;
-    id?:number; 
+  type: "create" | "update" | "delete";
+  data?: any;
+  id?: number;
 }) => {
-    return (
-        <div>
+  const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
+  const bgColor =
+    type === "create"
+      ? "bg-lamaYellow"
+      : type === "update"
+      ? "bg-lamaSky"
+      : "bg-lamaPurple";
 
-        </div>
-    );
+  return (
+    <>
+      <button
+        className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
+      >
+        <Image src={`/${type}.png`} alt="" width={16} height={16} />
+      </button>
+    </>
+  );
 };
 
 export default FormModal;
