@@ -1,7 +1,8 @@
+import FormModal from '@/components/FormModal';
 import Pagination from '@/components/Pagination';
 import Table from '@/components/Table';
 import TableSearch from '@/components/TableSearch';
-import { parentsData, role, studentsData } from '@/lib/data';
+import { role, studentsData } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -75,9 +76,10 @@ const StudentListPage = () => {
 
                     <Link href={`/list/teachers/${item.id}`}>
                         {role === "admin" && (
-                            <button className='w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple'>
-                                <Image src="/delete.png" alt='' width={16} height={16} />
-                            </button>
+                            // <button className='w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple'>
+                            //     <Image src="/delete.png" alt='' width={16} height={16} />
+                            // </button>
+                            <FormModal table="student" type="delete" id={item.id} />
                         )}
                     </Link>
                 </div>
@@ -102,16 +104,17 @@ const StudentListPage = () => {
                             <Image src="/sort.png" alt='' width={14} height={14} />
                         </button>
                         {role === "admin" && (
-                            <button className='w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow'>
+                           /*  <button className='w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow'>
                                 <Image src="/plus.png" alt='' width={14} height={14} />
-                            </button>
+                            </button>  */
+                            <FormModal table="student" type="create"/>
                         )}
                     </div>
                 </div>
             </div>
 
             {/* LIST */}
-            <Table columns={columns} renderRow={renderRow} data={parentsData} />
+            <Table columns={columns} renderRow={renderRow} data={studentsData} />
 
             {/* PAGINATION */}
             <Pagination />
