@@ -49,7 +49,7 @@ const StudentForm = ({
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onsubmit}>
-      <h1 className="text-xl font-semibold">Create a new teacher</h1>
+      <h1 className="text-xl font-semibold">Create a new Student</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
