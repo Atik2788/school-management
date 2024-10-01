@@ -16,7 +16,7 @@ model Student {
   id String @id
   username String @unique
   name String
-  username String?
+  surename String
   email String? @unique
   phone String? @unique
   address String
@@ -42,7 +42,7 @@ model Teacher {
   id String @id
   username String @unique
   name String
-  username String?
+  surename String
   email String? @unique
   phone String? @unique
   address String
@@ -59,7 +59,7 @@ model Parent {
   id String @id
   username String @unique
   name String
-  username String? 
+  surename String
   email String? @unique
   phone String @unique
   address String
@@ -111,10 +111,10 @@ model Lesson {
   subject Subject @relation (fields: [subjectId], references: [id])
 
   classId Int
-  subject Class @relation (fields: [classId], references: [id])
+  class Class @relation (fields: [classId], references: [id])
 
   teacherId String
-  subject Teacher @relation (fields: [teacherId], references: [id])
+  teacher Teacher @relation (fields: [teacherId], references: [id])
 
   exam Exam[]
   asignment Assignment[]
