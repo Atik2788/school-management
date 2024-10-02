@@ -37,3 +37,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see
 
 #### for remove any installation
 ###### npm remove rechart
+
+
